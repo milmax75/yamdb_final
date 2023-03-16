@@ -1,0 +1,11 @@
+# pack-refs with: peeled fully-peeled sorted 
+d4033aba1f654cefdafd702e5febc439c12aa016 refs/remotes/origin/Develop
+eab2642362d0d2bad2c1b066e3b50c423cda1b78 refs/remotes/origin/feature/Authentication
+d6cb1020886ab0b9b51fea3a6f081028977e8179 refs/remotes/origin/feature/Category_Genre_Title
+677c3a6c7dc8824ee139903367ef507fbdfc4ac3 refs/remotes/origin/feature/User_with_roles
+a89500d84dbc42114ddbeccf1ca9b682bde265cc refs/remotes/origin/feature/Users
+d50de752d13eb0cb9521e3751debb81f46eb6c4a refs/remotes/origin/feature/comment_review
+456eb8aceeb78ddc94834d152fc3faa7e9bf1223 refs/remotes/origin/feature/natalya_review
+cca44c7ebbc3eb643386e40683d419b426be4df3 refs/remotes/origin/fix/review1
+4e14af89fb383a070a25f1eaed55004f72e01b08 refs/remotes/origin/fix/tests
+df0e11cf4ca27f201fdebf1d3f75865d1b8fcd41 refs/remotes/origin/master
