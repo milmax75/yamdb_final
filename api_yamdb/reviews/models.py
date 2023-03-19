@@ -1,8 +1,10 @@
-from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import AbstractUser
-from .validators import validate_year, validate_username
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
+
 from core.models import CreatedModel, GenreCategoryModel
+
+from .validators import validate_username, validate_year
 
 
 class UserCustomized(AbstractUser):

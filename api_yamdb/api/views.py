@@ -9,7 +9,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-
 from core.tokens import send_conf_code
 from reviews.models import Category, Genre, Review, Title, UserCustomized
 
@@ -30,7 +29,7 @@ class UserViewSet(viewsets.ModelViewSet):
     pagination_class = PageNumberPagination
     lookup_field = 'username'
 
-    def create_user(username, email, first_name, last_name, bio, role):
+    def create_user(self, username, email, first_name, last_name, bio, role):
         user = UserCustomized(
             username=username,
             email=email,
