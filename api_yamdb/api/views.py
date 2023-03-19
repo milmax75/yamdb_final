@@ -1,3 +1,4 @@
+from core.tokens import send_conf_code
 from django.contrib.auth.tokens import default_token_generator
 from django.db import IntegrityError
 from django.db.models import Avg
@@ -9,7 +10,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-from core.tokens import send_conf_code
 from reviews.models import Category, Genre, Review, Title, UserCustomized
 
 from .filters import TitlesFilter
