@@ -5,24 +5,23 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.tokens import default_token_generator
 from rest_framework_simplejwt.tokens import AccessToken
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, permissions, status
+from rest_framework import permissions, status, viewsets
 from rest_framework.pagination import PageNumberPagination
 from .serializers import (
-    UserSerializer,
-    UserSignUpSerializer,
-    TokenRequestSerializer,
-    ReviewSerializer,
-    CommentSerializer,
     CategoriesSerializer,
+    CommentSerializer,
     GenresSerializer,
+    ReviewSerializer,
     TitlesCreateSerializer,
     TitlesReadSerializer,
-    UserRoleSerializer
+    TokenRequestSerializer,
+    UserRoleSerializer,
+    UserSerializer,
+    UserSignUpSerializer
 )
 from django.db import IntegrityError
 from core.tokens import send_conf_code
-from reviews.models import Title, Review, UserCustomized, Category, Genre, \
-    UserCustomized
+from reviews.models import Title, Review, UserCustomized, Category, Genre
 from .permissions import IsModerOrAdmOrAuthor, IsAdminOrReadOnly, IsAdmin
 from .mixins import ProjectModelMixin
 from .filters import TitlesFilter
