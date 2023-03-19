@@ -1,31 +1,26 @@
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.tokens import default_token_generator
-from rest_framework_simplejwt.tokens import AccessToken
+from django.db import IntegrityError
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
-from .serializers import (
-    CategoriesSerializer,
-    CommentSerializer,
-    GenresSerializer,
-    ReviewSerializer,
-    TitlesCreateSerializer,
-    TitlesReadSerializer,
-    TokenRequestSerializer,
-    UserRoleSerializer,
-    UserSerializer,
-    UserSignUpSerializer
-)
-from django.db import IntegrityError
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import AccessToken
+
 from core.tokens import send_conf_code
-from reviews.models import Title, Review, UserCustomized, Category, Genre
-from .permissions import IsModerOrAdmOrAuthor, IsAdminOrReadOnly, IsAdmin
-from .mixins import ProjectModelMixin
+from reviews.models import Category, Genre, Review, Title, UserCustomized
+
 from .filters import TitlesFilter
-from django.db.models import Avg
+from .mixins import ProjectModelMixin
+from .permissions import IsAdmin, IsAdminOrReadOnly, IsModerOrAdmOrAuthor
+from .serializers import (CategoriesSerializer, CommentSerializer,
+                          GenresSerializer, ReviewSerializer,
+                          TitlesCreateSerializer, TitlesReadSerializer,
+                          TokenRequestSerializer, UserRoleSerializer,
+                          UserSerializer, UserSignUpSerializer)
 
 
 class UserViewSet(viewsets.ModelViewSet):
