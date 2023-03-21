@@ -4,7 +4,7 @@ services:
   db: 
     image: postgres:13.0-alpine 
     volumes: 
-      - database:/var/lib/postgresql/yamdb/ 
+      - data_value:/var/lib/postgresql/data/ 
     env_file: 
       - ./.env 
   web: 
@@ -36,7 +36,6 @@ services:
       - web 
  
 volumes: 
-  database: 
-    external: true
+  data_value: 
   static_value: 
   media_value:
