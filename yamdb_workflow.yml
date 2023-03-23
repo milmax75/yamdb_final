@@ -62,7 +62,7 @@ jobs:
           with:
             push: true
             context: ./api_yamdb
-            tags: milmax/api_yamdb:v.2 
+            tags: milmax/api_yamdb:v.3 
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
