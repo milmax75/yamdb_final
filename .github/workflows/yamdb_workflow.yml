@@ -61,7 +61,7 @@ jobs:
           uses: docker/build-push-action@v2 
           with:
             push: true
-            tags: milmax/yamdb_final:latest 
+            tags: milmax/api_yamdb:v.2 
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
