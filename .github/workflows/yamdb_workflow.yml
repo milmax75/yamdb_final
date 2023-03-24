@@ -1,9 +1,14 @@
 # .github/workflows/**yamdb_workflow.yml**
 name: Django-app workflow
 
-on: push
+# on: push
 
 jobs:
+  on:
+    push:
+      branches:
+        - '*'
+        - '!master'
   tests:
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu 
     runs-on: ubuntu-latest
@@ -39,6 +44,10 @@ jobs:
         python manage.py test
         cd ..
         pytest
+  on:
+    push:
+      branches:
+        - master
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
       runs-on: ubuntu-latest
