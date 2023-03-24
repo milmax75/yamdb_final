@@ -1,12 +1,11 @@
 # .github/workflows/**yamdb_workflow.yml**
 name: Django-app workflow
 
-# on: push
+on: push
 
 jobs:
 
   tests:
-    on: push
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu 
     runs-on: ubuntu-latest
 
@@ -43,13 +42,10 @@ jobs:
         pytest
   
   build_and_push_to_docker_hub:
-  on:
-    push:
-      branches:
-        - master
       name: Push Docker image to Docker Hub
       runs-on: ubuntu-latest
       needs: tests
+      if: github.ref == 'refs/heads/master'
       steps:
         - name: Check out the repo
           # Проверка доступности репозитория Docker Hub для workflow
@@ -71,12 +67,9 @@ jobs:
             context: ./api_yamdb
             tags: milmax/api_yamdb:v.3 
   deploy:
-  on:
-    push:
-      branches:
-        - master
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
@@ -97,10 +90,6 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d 
   send_message:
-    on:
-    push:
-      branches:
-        - master
     runs-on: ubuntu-latest
     needs: deploy
     steps:
@@ -109,5 +98,5 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} Деплой успешно завершен! 
+        message: ${{ github.workflow }} Успешно выполнено! 
 
