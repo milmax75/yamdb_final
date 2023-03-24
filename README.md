@@ -9,6 +9,6 @@ yamdb_final
 
 <a href='http://84.201.158.11/admin/'>Admin's page<a/><br/>
 <a href='http://84.201.158.11/api/v1/titles/'>Composition titles<a/><br/>
-<a href='http://84.201.158.11/api/v1/genres/'>Composition titles<a/><br/>
-<a href='http://84.201.158.11/api/v1/categories/'>Composition titles<a/><br/>
+<a href='http://84.201.158.11/api/v1/genres/'>Composition genres<a/><br/>
+<a href='http://84.201.158.11/api/v1/categories/'>Composition categories<a/><br/>
 
