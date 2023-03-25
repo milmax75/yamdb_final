@@ -5,6 +5,10 @@ yamdb_final
 
 <img src="https://github.com/milmax75/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg" height="90"/>
 
+# адрес, по которому развернут проект
+http://84.201.158.11/
+
+
 # some project pages
 
 <a href='http://84.201.158.11/admin/'>Admin's page<a/><br/>

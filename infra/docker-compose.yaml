@@ -9,7 +9,6 @@ services:
       - ./.env 
   web: 
     image: milmax/api_yamdb:v.3 
-    # build: ../
     restart: always 
     volumes: 
       - static_value:/app/static/ 
